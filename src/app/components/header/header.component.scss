@@ -1,0 +1,71 @@
+.toolbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  background-color: #475ba7;
+  color: white;
+  font-weight: 600;
+  justify-content: space-between;
+  padding: 0 15px;
+
+  .left-side {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 115px;
+    height: 100%;
+
+    .expandBtn {
+      cursor: pointer;
+    }
+  }
+
+  .right-side {
+    display: flex;
+    width: 110px;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+
+    .menu-bars {
+      display: flex;
+      justify-content: space-around;
+      width: 65px;
+      height: 100%;
+      align-items: center;
+
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+}
+
+// .toolbar img {
+//   margin: 0 16px;
+// }
+
+// .toolbar #twitter-logo {
+//   height: 40px;
+//   margin: 0 8px;
+// }
+
+// .toolbar #youtube-logo {
+//   height: 40px;
+//   margin: 0 16px;
+// }
+
+// .toolbar #twitter-logo:hover,
+// .toolbar #youtube-logo:hover {
+//   opacity: 0.8;
+// }
+
+// .spacer {
+//   flex: 1;
+// }
