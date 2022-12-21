@@ -1,0 +1,17 @@
+.main {
+  margin-top: 8vh;
+  display: flex;
+  width: 100vw;
+}
+
+.main-section-collpse {
+  background: #c7d8e6;
+  height: calc(100vh - 8vh);
+  width: 100vw;
+  overflow-y: scroll;
+}
+
+.main-section-expand {
+  @extend .main-section-collpse;
+  width: calc(100vw - 15vw);
+}

@@ -1,0 +1,12 @@
+<div class="main">
+  <app-sidebar></app-sidebar>
+  <div
+    [ngClass]="
+      sidebarExpandService.isExpand
+        ? 'main-section-expand'
+        : 'main-section-collpse'
+    "
+  >
+    <app-dashboard></app-dashboard>
+  </div>
+</div>
