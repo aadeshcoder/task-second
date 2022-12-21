@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SidebarExpandService } from 'src/app/services/sidebar-expand.service';
 
 @Component({
   selector: 'app-header',
@@ -6,11 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  isExpand:boolean;
+  constructor(private sidebarExpand:SidebarExpandService) {}
+
+  isExpand:boolean = true;
 
   // method to handle the sidebar expansion
   handleClick () {
     this.isExpand = !(this.isExpand);
+    this.sidebarExpand.isExpand = this.isExpand;
     console.log("Expanding sidebar", this.isExpand);
   }
 }
