@@ -1,1 +1,36 @@
-<div class="sidebar">Sidebar</div>
+<div class="sidebar" *ngIf="sidebarExpand.isExpand">
+  <div class="info">
+    <div>
+      <span class="name">Kushagra Gupta</span>
+    </div>
+    <div>
+      <span class="mail">example.email.com</span>
+    </div>
+    <div class="avatar">KG</div>
+  </div>
+  <div class="pages">
+    <label>Pages</label>
+    <div class="pages-container">
+      <a href="#" class="focus">Dashboard</a>
+      <a href="#">Posts</a>
+      <a href="#">Articles</a>
+    </div>
+  </div>
+  <div class="tools">
+    <label>Tools</label>
+    <div class="tools-container">
+      <a href="#">
+        <div>
+          <mat-icon>import_contacts</mat-icon>
+          <span>Contact</span>
+        </div>
+      </a>
+      <a href="#">
+        <div>
+          <mat-icon>contact_mail</mat-icon>
+          <span>Leads</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
