@@ -9,6 +9,10 @@ import { sellsData } from 'src/app/mock-data';
 import { empData } from "src/app/employee-mock-data";
 import { EmployeeData } from 'src/app/EmployeeData';
 
+// posts data
+import { Post } from '../Post';
+import { posts } from '../posts-mock-data';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -23,5 +27,9 @@ export class DataService {
 
   getEmployeeData ():Observable<EmployeeData[]> {
     return of(empData);
+  }
+
+  getPostsData ():Observable<Post[]> {
+    return of(posts);
   }
 }
