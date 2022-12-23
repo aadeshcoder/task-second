@@ -1,89 +1,85 @@
 <div class="page-name">
-    <h3>Dashboard</h3>
-  </div>
-  <div class="sells-container">
-    <mat-card class="card" *ngFor="let item of sellData">
-      <mat-card-header>
-        <mat-card-title>{{ item.name }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{ item.sell }}</p>
-        <mat-icon [ngClass]="item.change > 0 ? 'mat-icon-up' : 'mat-icon-down'">
-          arrow_outward
-        </mat-icon>
-        <p>
-          <span [ngClass]="item.change > 0 ? 'change-up' : 'change-down'">
-            {{ item.change }}%
-          </span>
-          <span class="subtitle"> of target</span>
-        </p>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <div class="tab-container">
-    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
-      <mat-tab label="Current Overview">
-        <div class="sub-tab-container">
-          <div class="item-1"> <!-- grid item 1 -->
-            <span><strong>Users Table</strong></span>
-            <div class="mat-elevation-z8">
-              <table mat-table [dataSource]="dataSource" matSort>
-                <!-- ID Column -->
-                <ng-container matColumnDef="id">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
-                  <td mat-cell *matCellDef="let row">{{ row.id }}</td>
-                </ng-container>
+  <h3>Dashboard</h3>
+</div>
+<div class="sells-container">
+  <mat-card class="card" *ngFor="let item of sellData">
+    <mat-card-header>
+      <mat-card-title>{{ item.name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{ item.sell }}</p>
+      <mat-icon [ngClass]="item.change > 0 ? 'mat-icon-up' : 'mat-icon-down'">
+        arrow_outward
+      </mat-icon>
+      <p>
+        <span [ngClass]="item.change > 0 ? 'change-up' : 'change-down'">
+          {{ item.change }}%
+        </span>
+        <span class="subtitle"> of target</span>
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+<div class="tab-container">
+  <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="start">
+    <mat-tab label="Current Overview">
+      <div class="sub-tab-container">
+        <div class="item-1">
+          <!-- grid item 1 -->
+          <span><strong>Users Table</strong></span>
+          <div class="mat-elevation-z8">
+            <table mat-table [dataSource]="dataSource" matSort>
+              <!-- ID Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+                <td mat-cell *matCellDef="let row">{{ row.id }}</td>
+              </ng-container>
 
-                <!-- Name Column -->
-                <ng-container matColumnDef="name">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    Name
-                  </th>
-                  <td mat-cell *matCellDef="let row">{{ row.name }}</td>
-                </ng-container>
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+                <td mat-cell *matCellDef="let row">{{ row.name }}</td>
+              </ng-container>
 
-                <!-- Department Column -->
-                <ng-container matColumnDef="department">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    Department
-                  </th>
-                  <td mat-cell *matCellDef="let row">{{ row.department }}</td>
-                </ng-container>
+              <!-- Department Column -->
+              <ng-container matColumnDef="department">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  Department
+                </th>
+                <td mat-cell *matCellDef="let row">{{ row.department }}</td>
+              </ng-container>
 
-                <!-- Age Column -->
-                <ng-container matColumnDef="age">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Age</th>
-                  <td mat-cell *matCellDef="let row">{{ row.age }}</td>
-                </ng-container>
+              <!-- Age Column -->
+              <ng-container matColumnDef="age">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Age</th>
+                <td mat-cell *matCellDef="let row">{{ row.age }}</td>
+              </ng-container>
 
-                <!-- userId Column -->
-                <ng-container matColumnDef="userId">
-                  <th mat-header-cell *matHeaderCellDef mat-sort-header>
-                    User Id
-                  </th>
-                  <td mat-cell *matCellDef="let row">{{ row.userId }}</td>
-                </ng-container>
+              <!-- userId Column -->
+              <ng-container matColumnDef="userId">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                  User Id
+                </th>
+                <td mat-cell *matCellDef="let row">{{ row.userId }}</td>
+              </ng-container>
 
-                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                <tr
-                  mat-row
-                  *matRowDef="let row; columns: displayedColumns"
-                ></tr>
-              </table>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
 
-              <mat-paginator
-                [pageSizeOptions]="[5, 10, 25, 100]"
-                aria-label="Select page of users"
-              ></mat-paginator>
-            </div>
-          </div>
-          <div class="item-2"> <!-- grid item 2 -->
-            <span><strong>Empty Chart</strong></span>
-            <div class="chart"></div>
+            <mat-paginator
+              [pageSize]="5"
+            ></mat-paginator>
           </div>
         </div>
-      </mat-tab>
-      <mat-tab label="Trends">Content 2</mat-tab>
-      <mat-tab label="Third">Content 3</mat-tab>
-    </mat-tab-group>
-  </div>
+        <div class="item-2">
+          <!-- grid item 2 -->
+          <span><strong>Empty Chart</strong></span>
+          <div class="chart"></div>
+        </div>
+      </div>
+    </mat-tab>
+    <mat-tab label="Trends">Content 2</mat-tab>
+    <mat-tab label="Third">Content 3</mat-tab>
+  </mat-tab-group>
+</div>
