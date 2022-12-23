@@ -11,9 +11,15 @@
   <div class="pages">
     <label>Pages</label>
     <div class="pages-container">
-      <a href="#" class="focus">Dashboard</a>
-      <a href="#">Posts</a>
-      <a href="#">Articles</a>
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Dashboard
+      </a>
+      <a routerLink="/posts" routerLinkActive="active">Posts</a>
+      <a routerLink="/articles" routerLinkActive="active">Articles</a>
     </div>
   </div>
   <div class="tools">
