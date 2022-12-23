@@ -1,0 +1,24 @@
+<div class="container">
+  <form [formGroup]="addPostForm" (ngSubmit) = "onSubmit()">
+    <h5>Add Post</h5>
+    <mat-form-field>
+      <mat-label>First name</mat-label>
+      <input formControlName="name" matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input formControlName="title" matInput />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Message</mat-label>
+      <textarea formControlName="message" matInput placeholder="Put your message here..."></textarea>
+    </mat-form-field>
+    <mat-dialog-actions style="display: flex; justify-content: center">
+      <button mat-raised-button mat-dialog-close type="submit" [disabled] = "!addPostForm.valid">Save</button>
+
+      <button mat-raised-button mat-dialog-close type="button" class="btn">
+        Cancel
+      </button>
+    </mat-dialog-actions>
+  </form>
+</div>
