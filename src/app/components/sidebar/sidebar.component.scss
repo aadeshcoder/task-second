@@ -54,6 +54,12 @@ $sidebar-backgorund-color: #ecedec;
         padding-left: 5px;
       }
 
+      .active {
+        color: white;
+        background-color: #7fa2d2;
+        padding-left: 5px;
+      }
+
       a {
         text-decoration: none;
         transition: padding 0.3s ease;
@@ -65,9 +71,7 @@ $sidebar-backgorund-color: #ecedec;
         }
 
         &:active {
-          color: white;
-          background-color: #7fa2d2;
-          padding-left: 5px;
+          @extend .active;
         }
       }
     }
