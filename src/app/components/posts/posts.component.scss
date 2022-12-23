@@ -1,0 +1,67 @@
+// mixin for show scroll bar on hover
+@mixin showScrollBarOnHover {
+  &::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+  }
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 20px;
+    }
+  }
+}
+
+.post-container {
+  padding: 10px 16px;
+  h3 {
+    font-size: 25px;
+    margin: 0;
+  }
+
+  .add-post {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .container {
+    margin-top: 10px;
+    background-color: #475ba754;
+    height: 100%;
+    padding: 10px; // remove after completion
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    mat-card {
+      mat-card-header {
+        display: flex;
+        padding: 16px 16px 0;
+        gap: 26px;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        mat-card-subtitle {
+          font-size: 11px;
+          font-family: poppins;
+          font-weight: bold;
+        }
+        mat-card-title {
+          font-size: 14px;
+          font-weight: 400;
+          font-family: poppins;
+        }
+      }
+
+      mat-card-content {
+        mat-card-subtitle {
+          font-size: 11px;
+          font-family: poppins;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

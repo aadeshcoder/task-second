@@ -1,0 +1,29 @@
+<div class="post-container">
+  <div class="add-post">
+    <h3>Posts</h3>
+    <button mat-raised-button (click) = "addPost()">Add Post</button>
+  </div>
+  <div class="container">
+    <mat-card *ngFor="let item of posts">
+      <mat-card-header>
+        <div>
+          <mat-card-subtitle>Posted On</mat-card-subtitle>
+          <mat-card-title>{{ item.postedOn }}</mat-card-title>
+        </div>
+        <div>
+          <mat-card-subtitle>Title</mat-card-subtitle>
+          <mat-card-title>{{ item.title }}</mat-card-title>
+        </div>
+        <div>
+          <mat-card-subtitle>Name</mat-card-subtitle>
+          <mat-card-title>{{ item.name }}</mat-card-title>
+        </div>
+      </mat-card-header>
+
+      <mat-card-content>
+        <mat-card-subtitle>Message</mat-card-subtitle>
+        {{ item.message }}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
