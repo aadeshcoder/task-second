@@ -9,6 +9,10 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [],
@@ -22,7 +26,11 @@ import { MatInputModule } from '@angular/material/input';
     MatSortModule,
     MatButtonModule,
     MatDialogModule,
-    MatInputModule
+    MatInputModule,
+    MatSelectModule,
+    MatProgressBarModule,
+    MatTreeModule,
+    MatCheckboxModule
   ]
 })
 export class MaterialModule { }

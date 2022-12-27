@@ -4,6 +4,7 @@
     <button mat-raised-button (click) = "addPost()">Add Post</button>
   </div>
   <div class="container">
+    <mat-progress-bar *ngIf="showLoader" mode="indeterminate"></mat-progress-bar>
     <mat-card *ngFor="let item of posts">
       <mat-card-header>
         <div>

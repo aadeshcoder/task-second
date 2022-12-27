@@ -4,5 +4,4 @@ export interface Post {
     title:string,
     postedOn:string,
     message:string,
-    restrictedTo:string[]
 }

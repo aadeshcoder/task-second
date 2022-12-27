@@ -1,20 +1,43 @@
 <div class="container">
-  <form [formGroup]="addPostForm" (ngSubmit) = "onSubmit()">
-    <h5>Add Post</h5>
-    <mat-form-field>
+  <h5>Add Post</h5>
+  <form [formGroup]="addPostForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill" class="width">
       <mat-label>First name</mat-label>
       <input formControlName="name" matInput />
     </mat-form-field>
-    <mat-form-field>
+
+    <mat-form-field appearance="fill" class="width">
       <mat-label>Title</mat-label>
       <input formControlName="title" matInput />
     </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Restricted To</mat-label>
+      <mat-select formControlName="restrictedUser" multiple>
+        <mat-option *ngFor="let user of usersList" [value]="user">{{
+          user
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
     <mat-form-field>
       <mat-label>Message</mat-label>
-      <textarea formControlName="message" matInput placeholder="Put your message here..."></textarea>
+      <textarea
+        formControlName="message"
+        matInput
+        placeholder="Put your message here..."
+      ></textarea>
     </mat-form-field>
+
     <mat-dialog-actions style="display: flex; justify-content: center">
-      <button mat-raised-button mat-dialog-close type="submit" [disabled] = "!addPostForm.valid">Save</button>
+      <button
+        mat-raised-button
+        mat-dialog-close
+        type="submit"
+        [disabled]="!addPostForm.valid"
+      >
+        Save
+      </button>
 
       <button mat-raised-button mat-dialog-close type="button" class="btn">
         Cancel

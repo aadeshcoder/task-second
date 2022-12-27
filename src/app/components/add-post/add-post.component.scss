@@ -1,13 +1,27 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 16px;
 
-    mat-form-field {
-        width: 100%;
+  form {
+    overflow-y: auto;
+  }
+
+  mat-form-field {
+    font-size: 12px !important;
+    width: 100%;
+
+    input {
+        height: 20px !important;
     }
+  }
+
+  .example-additional-selection {
+    opacity: 0.75;
+    font-size: 0.75em;
+  }
 }

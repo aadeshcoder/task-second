@@ -72,6 +72,7 @@
   .sub-tab-container {
     display: grid;
     grid-template-columns: 49% 49%;
+    grid-auto-rows: 32vw;
     gap: 20px;
     margin-top: 16px;
 
@@ -87,7 +88,7 @@
       .mat-elevation-z8 {
         box-shadow: none;
         overflow: auto;
-  
+
         // height
         &::-webkit-scrollbar {
           // width: 5px;
@@ -98,13 +99,13 @@
           background: #f1f1f1;
           border-radius: 20px;
         }
-  
+
         // handle
         &::-webkit-scrollbar-thumb {
           background: #c6c2c2;
           border-radius: 20px;
         }
-  
+
         // Handle on hover
         &::-webkit-scrollbar-thumb:hover {
           background: rgb(125, 121, 121);
@@ -114,7 +115,38 @@
 
     .item-2 {
       @extend .item-1;
+
+      .tree {
+        height: 95%;
+        width: 100%;
+        overflow-y: auto;
+
+        // height
+        &::-webkit-scrollbar {
+          // width: 5px;
+          width: 8px;
+        }
+        // track
+        &::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          border-radius: 20px;
+        }
+
+        // handle
+        &::-webkit-scrollbar-thumb {
+          background: #c6c2c2;
+          border-radius: 20px;
+        }
+
+        // Handle on hover
+        &::-webkit-scrollbar-thumb:hover {
+          background: rgb(125, 121, 121);
+        }
+      }
     }
 
+    .item-3, .item-4, .item-5, .item-6 {
+      @extend .item-1;
+    }
   }
 }
